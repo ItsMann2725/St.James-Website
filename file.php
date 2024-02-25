@@ -1,9 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Determine which form is being submitted based on a hidden input field
+    // Determines which form is being submitted based on a hidden input field
     $formType = isset($_POST["formType"]) ? $_POST["formType"] : '';
 
-    // Process the form based on its type
+    // Processes the form based on its type
     switch ($formType) {
         case 'application':
             processApplicationForm();
@@ -11,8 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         case 'contact':
             processContactForm();
             break;
+        case 'subscription':
+            processSubscriptionForm();
+            break;
         default:
-            // Handle unknown form types or display an error message
+            // Handles unknown form types or display an error message
             echo "Error: Unknown form type.";
             break;
     }
@@ -20,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 // Function to process the application form
 function processApplicationForm() {
-    // Retrieve form data
+    // Retrieves form data
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $email = $_POST["email"];
@@ -31,8 +34,8 @@ function processApplicationForm() {
     $resumeFileName = $_FILES["resume"]["name"];
     $coverLetter = $_POST["summary"];
 
-    // Compose email message
-    $to = "manthanwiz28@gmail.com";  // Replace with your email address
+    // Composes email message
+    $to = "manthanwiz28@gmail.com";
     $subject = "New Job Application";
     $message = "First Name: $firstname\nLast Name: $lastname\nEmail: $email\nPhone: $phone\nAddress: $address\n";
     $message .= "Eligibility to work in the US: $eligibility\nAge Eligibility: $ageEligibility\n";
@@ -42,24 +45,39 @@ function processApplicationForm() {
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
 
-    // Send email
+    // Sends email
     if (mail($to, $subject, $message, $headers)) {
-        // Email sent successfully
 
-        // Redirect to the thank you page for the application form
+        // Redirects to the thank you page for the application form
         header("Location: thank_you_application.php");
         exit();
     } else {
-        // Email sending failed
         echo "Error: Unable to send email. Please try again later.";
     }
 }
 
+function processSubscriptionForm() {
+    // Collect form data
+    $email = $_POST["email_address"];
+
+        // Email details
+        $to = "manthanwiz28@gmail.com";
+        $subject = "New Subscription";
+        $message = "A new user has subscribed. Email: $email";
+
+        // Send email
+        $headers = $email;
+        if (mail($to, $subject, $message, $headers)) {
+
+    
+        header("Location: thank_you_subscription.php");
+        exit();
+    } else {
+        echo "Error: Unable to send email. Please try again later.";
+    }
+}
 // Function to process the contact form
 function processContactForm() {
-    // Your contact form processing logic here
-    // ...
-    // Retrieve form data
     $name = $_POST["name"];
     $phone = $_POST["phone"];
     $persons = $_POST["person"];
@@ -67,22 +85,19 @@ function processContactForm() {
     $reservationTime = $_POST["reservation-time"];
     $message = $_POST["message"];
 
-    // Perform any necessary validation and sanitization
-
-    // Compose email message
-    $to = "manthanwiz28@gmail.com";  // Replace with your email address
+    // Composes email message
+    $to = "manthanwiz28@gmail.com";
     $subject = "New Reservation";
     $body = "Name: $name\nPhone: $phone\nPersons: $persons\nDate: $reservationDate\nTime: $reservationTime\nMessage: $message";
 
-    // Send email
+    // Sends email
     if (mail($to, $subject, $body)) {
-        // Email sent successfully
 
-    // Redirect to the thank you page for the contact form
+    // Redirects to the thank you page for the contact form
     header("Location: thank_you_contact.php");
     exit();
-}else {
-    // Email sending failed
-    echo "Error: Unable to send email. Please try again later.";
 }
+else {
+    echo "Error: Unable to send email. Please try again later.";
+    }
 }
