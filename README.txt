@@ -10,19 +10,19 @@ Languages Used:
 * PHP
 
 Pages on the Website:
-1. index.html – Home Page
-2. menu.html – Menu Page
-3. about.html – About Page
-4. careers.html – Careers Page
-5. contact.html – Contact page
-6. copyrights.html – Copyrights Page
-7. credits.html – Credits Page
-8. bartender.html – Bartender Job Overview Page
-9. chef-partie.html – Chef De Partie Job Overview Page
-10. chef-sous.html – Sous Chef Job Overview Page
-11. bartender-application.html – Bartender Job Application Page
-12. chef-partie-application.html – Chef De Partie Job Application Page
-13. chef-sous-application.html – Sous Chef Job Application Page
+1. index.html ï¿½ Home Page
+2. menu.html ï¿½ Menu Page
+3. about.html ï¿½ About Page
+4. careers.html ï¿½ Careers Page
+5. contact.html ï¿½ Contact page
+6. copyrights.html ï¿½ Copyrights Page
+7. credits.html ï¿½ Credits Page
+8. bartender.html ï¿½ Bartender Job Overview Page
+9. chef-partie.html ï¿½ Chef De Partie Job Overview Page
+10. chef-sous.html ï¿½ Sous Chef Job Overview Page
+11. bartender-application.html ï¿½ Bartender Job Application Page
+12. chef-partie-application.html ï¿½ Chef De Partie Job Application Page
+13. chef-sous-application.html ï¿½ Sous Chef Job Application Page
 
 Features:
 * Completely responsive
@@ -41,5 +41,5 @@ work of Manthan Patel and Dev Patel or have been appropriately licensed for use 
 All Rights Reserved.
 
 All content, including text, images, graphics, and other media on this website, unless otherwise indicated, is the property of St.James and is protected by copyright law.
- This includes content sourced from St.James's official Instagram account and Facebook account, photographs taken by Dev Patel, and images obtained from Pixabay, Unsplash,
- Freepik, and Flaticons are all attributed according to license guidelines.
+This includes content sourced from St.James's official Instagram account and Facebook account, photographs taken by Dev Patel, and images obtained from Pixabay, Unsplash,
+Freepik, and Flaticons are all attributed according to license guidelines.
